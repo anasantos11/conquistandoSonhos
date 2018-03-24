@@ -1,0 +1,27 @@
+{
+    "name": "conquistandosonhos",
+    "version": "1.0.0",
+    "description": "Software para auxiliar na conquista de sonhos ou objetivos financeiros",
+    "main": "app.module.js",
+    "keywords": [
+        "dreams",
+        "sonhos",
+        "financeiro",
+        "financial"
+    ],
+    "author": "Ana Paula dos Santos, Carlos Felipe de Almeida Arantes",
+    "license": "MIT",
+    "dependencies": {
+        "@uirouter/angularjs": "^1.0.15",
+        "angular": "^1.6.9",
+        "angular-chart.js": "^1.1.1",
+        "bootstrap": "^4.0.0",
+        "chart.js": "^2.7.2",
+        "jquery": "^3.3.1",
+        "moment": "^2.21.0"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.1"
+    }
+}
