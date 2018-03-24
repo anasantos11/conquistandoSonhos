@@ -1,0 +1,2 @@
+# conqueringDreams
+Sistema para projeção de dados para ajudar o usuário no planejamento para a conquista de um sonho ou objetivo financeiro. Através de informações referentes às suas despesas, receitas, valor do sonho/objetivo e tempo planejado para conquistá-lo informaremos a economia necessária ao longo desse tempo e também o rendimento dessa economia caso ele aplique-a em alguns tipos de investimentos ao longo desse tempo.  
