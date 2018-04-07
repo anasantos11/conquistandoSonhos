@@ -17,9 +17,9 @@
 <body>
     <cabecalho></cabecalho>
     <main class="page-header header-filter img-main d-block">
-        <div class="container" ng-controller="DespesaCtrl as despesa">
+        <div class="container" ng-controller="DespesaCtrl as vm" ng-init="vm.atualizarGraficoDespesa()">
             <div class="row">
-                <div class="col-12">
+                <div class="col-7">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Salários e outras rendas</h5>
@@ -28,11 +28,11 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Valor do salário</label>
-                                        <input ng-model="despesa.salario" type="number" class="form-control">
+                                        <input ng-model="vm.salario" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Valor de outras rendas</label>
-                                        <input ng-model="despesa.outrasReceitas" type="number" class="form-control">
+                                        <input ng-model="vm.outrasReceitas" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
                                     </div>
                                 </div>
 
@@ -41,45 +41,47 @@
                                 <div class="row">
                                     <div class="form-group col-md-4">
                                         <label class="bmd-label-floating">Valor despesas essenciais</label>
-                                        <input ng-model="despesa.valorEssencial" type="number" class="form-control">
+                                        <input ng-model="vm.valorEssencial" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label class="bmd-label-floating">Valor despesas redução</label>
-                                        <input ng-model="despesa.valorReducao" type="number" class="form-control">
+                                        <input ng-model="vm.valorReducao" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label class="bmd-label-floating">Valor despesas corte</label>
-                                        <input ng-model="despesa.valorCorte" type="number" class="form-control">
+                                        <input ng-model="vm.valorCorte" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
                                     </div>
-                                    <div class="form-group col-md-12 text-right">
-                                        <button type="submit" class="btn btn-success" ng-click="despesa.atualizarGraficoDespesa()">Processar</button>
+                                    <div class="col-12">
+                                        <span class="badge badge-pill badge-warning">Despesas Pessoais</span>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label class="bmd-label-floating">Valor despesas essenciais</label>
+                                        <input ng-model="vm.valorEssencial" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
                                     </div>
                                 </div>
 
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row" ng-if="despesa.mostrarGraficos" ng-cloak>
-                <div class="col-md-6">
+                <div class="col-5">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Renda x Gastos</h5>
                             <p class="card-text">Veja a comparação da sua renda com seus gastos.</p>
-                            <canvas id="pie" class="chart chart-pie" chart-data="despesa.comparativo.data" chart-labels="despesa.comparativo.labels"
-                                chart-options="despesa.options">
+                            <canvas id="pie" class="chart chart-pie" chart-data="vm.comparativo.data" chart-labels="vm.comparativo.labels"
+                                chart-options="vm.options">
                             </canvas>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
+
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Distrubição dos gastos</h5>
                             <p class="card-text">Veja como está a distribução dos seus gastos</p>
-                            <canvas id="pie" class="chart chart-pie" chart-data="despesa.distribuicaoGastros.data" chart-labels="despesa.distribuicaoGastros.labels"
-                                chart-options="despesa.options">
+                            <canvas id="pie" class="chart chart-pie" chart-data="vm.distribuicaoGastros.data" chart-labels="vm.distribuicaoGastros.labels"
+                                chart-options="vm.options">
                             </canvas>
+
                         </div>
                     </div>
                 </div>
@@ -88,6 +90,8 @@
     </main>
     <!--   Bibliotecas públicas-->
     <script src="assets/js/public.libs.js"></script>
+    <!-- Métodos compartilhados -->
+    <script src="app.util.js"></script>
     <!-- Arquivos AngularJS -->
     <script src="app.module.js"></script>
     <script src="controllers/despesa.controller.js"></script>

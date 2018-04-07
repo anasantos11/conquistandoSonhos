@@ -1,21 +1,26 @@
 angular.module('sonhosApp')
     .controller('DespesaCtrl', [function () {
-        var despesa = this;
+        var vm = this;
 
-        despesa.atualizarGraficoDespesa = function () {
-            despesa.distribuicaoGastros = {};
-            despesa.comparativo = {};
+        vm.atualizarGraficoDespesa = function () {
+            vm.distribuicaoGastros = {};
+            vm.comparativo = {};
 
-            despesa.totalDespesa = despesa.valorEssencial + despesa.valorReducao + despesa.valorCorte;
-            despesa.totalReceita = despesa.salario + despesa.outrasReceitas;
+            vm.totalDespesa = (isNullOrEmpty(vm.valorEssencial) ? 0 : vm.valorEssencial)
+                + (isNullOrEmpty(vm.valorReducao) ? 0 : vm.valorReducao)
+                + (isNullOrEmpty(vm.valorCorte) ? 0 : vm.valorCorte);
+            vm.totalReceita = (isNullOrEmpty(vm.salario) ? 0 : vm.salario) +
+                (isNullOrEmpty(vm.outrasReceitas) ? 0 : vm.outrasReceitas);
 
-            despesa.distribuicaoGastros.labels = ["Despesas Essenciais", "Despesas que posso reduzir", "Despesas que posso cortar"];
-            despesa.distribuicaoGastros.data = [despesa.valorEssencial, despesa.valorReducao, despesa.valorCorte];
-            despesa.distribuicaoGastros.cutoutPercentage  = true;
+            vm.distribuicaoGastros.labels = ["Despesas Essenciais", "Despesas que posso reduzir", "Despesas que posso cortar"];
+            vm.distribuicaoGastros.data = [isNullOrEmpty(vm.valorEssencial) ? 0 : vm.valorEssencial,
+            isNullOrEmpty(vm.valorReducao) ? 0 : vm.valorReducao,
+            isNullOrEmpty(vm.valorCorte) ? 0 : vm.valorCorte];
+            vm.distribuicaoGastros.cutoutPercentage = true;
 
-            despesa.comparativo.labels = ["Receitas", "Despesas"];
-            despesa.comparativo.data = [despesa.totalReceita, despesa.totalDespesa];
-            despesa.mostrarGraficos = true;
+            vm.comparativo.labels = ["Receitas", "Despesas"];
+            vm.comparativo.data = [vm.totalReceita, vm.totalDespesa];
+            vm.mostrarGraficos = true;
 
         }
     }]);
