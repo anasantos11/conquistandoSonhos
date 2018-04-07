@@ -1,7 +1,7 @@
 /* FUNDO PAGINA INICIAL */
 
 /*.main { 
-    background-image: url("../../images/fundo-home.jpg");
+    background-image: url("../img/fundo-home.jpg");
     height: 100vh; 
     background-position: center;
     background-repeat: no-repeat;
@@ -10,27 +10,45 @@
 }*/
 
 /* Imagem de fundo da página inicial*/
+
 .img-main {
-    background-image: url(../../img/fundo-index.jpg);
+    background-image: url(../img/fundo-index.jpg);
     transform: translate3d(0px, 0px, 0px);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
+    min-height: calc(100vh - 56px);
 }
+
 /*Escurecimento da imagem do fundo da página inicial */
 
-.header-filter:before{
-    background: rgba(0,0,0,.8);
+.header-filter:before {
+    background: rgba(0, 0, 0, .8);
 }
+
 /*Alterado tamanho máximo da altura das imagens dos cards */
+
 .card-img-top {
     max-height: 163px;
 }
 
 /*Linha horizontal abaixo do nav */
+
 hr {
-    color: #7b1818;
-    background-color: #7b1818;
+    color: #f08f00;
+    background-color: #f08f00;
     height: 5px;
-  }
+}
+
+/*Alterado cor da linha do input */
+
+.form-control, .is-focused .form-control {
+    background-image: linear-gradient(0deg, #f08f00 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #d2d2d2 1px, hsla(0, 0%, 82%, 0) 0);
+}
+
+/*Alterado cor da label do input */
+
+.is-focused [class*=" bmd-label"], .is-focused [class^=bmd-label] {
+    color:#f08f00;
+}

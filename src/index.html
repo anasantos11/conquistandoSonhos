@@ -9,20 +9,13 @@
     <title>
         Conquistando Sonhos
     </title>
-    <link rel="stylesheet" href="shared/libs/css/public.libs.css">
-    <link rel="stylesheet" href="shared/libs/css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
-    />
+    <link rel="stylesheet" href="assets/css/public.libs.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
-    <nav class="navbar navbar-default mb-0 ">
-        <div class="container justify-content-center">
-            <img class="navbar-brand" src="shared/img/logo.png" alt="Logo Conquistando Sonhos" href="#">
-        </div>
-    </nav>
-    <hr class="m-0">
+    <cabecalho></cabecalho>
     <main class="page-header header-filter img-main d-block">
         <div class="container" ng-controller="Main as vm">
             <div class="row">
@@ -34,7 +27,7 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
-                        <img class="card-img-top" src="shared/img/rentabilidade.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="assets/img/rentabilidade.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Projeção de rentabilidade</h4>
                             <p class="card-text">Planejar..</p>
@@ -45,17 +38,18 @@
 
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
-                        <img class="card-img-top" src="shared/img/despesas.png" alt="Card image cap">
+                        <img class="card-img-top" src="assets/img/despesas.png" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Despesas</h4>
                             <p class="card-text">Planejar..</p>
-                            <button href="#" class="btn btn-success">Vamos começar!</button>
+                            <a ng-href="
+                            despesa.html" class="btn btn-success">Vamos começar!</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
-                        <img class="card-img-top" src="shared/img/sonhos.png" alt="Card image cap">
+                        <img class="card-img-top" src="assets/img/sonhos.png" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Planejar sonho</h4>
                             <p class="card-text">Planejar..</p>
@@ -64,49 +58,14 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">GRÁFICO X</h5>
-                            <p class="card-text">Texto referente ao gráfico x</p>
-
-                            <canvas id="base" class="chart-bar" chart-data="vm.data" chart-labels="vm.labels" chart-colors="vm.colors" chart-dataset-override="vm.datasetOverride">
-                            </canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">GRÁFICO Y</h5>
-                            <p class="card-text">Texto referente ao gráfico y</p>
-                            <canvas id="polar-area" class="chart chart-polar-area" chart-data="vm.datay" chart-labels="vm.labelsy" chart-options="vm.options">
-                            </canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">GRÁFICO Z</h5>
-                            <p class="card-text">Texto referente ao gráfico z</p>
-
-                            <canvas id="bar" class="chart chart-bar" chart-data="vm.dataz" chart-labels="vm.labelsz" chart-series="series" </canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
     <!--   Bibliotecas públicas-->
-    <script src="shared/libs/js/public.libs.js"></script>
+    <script src="assets/js/public.libs.js"></script>
     <!-- Arquivos AngularJS -->
     <script src="app.module.js"></script>
-    <script src="components/main.controller.js"></script>
-    <script src="components/despesa/despesa.controller.js"></script>
+    <script src="controllers/main.controller.js"></script>
+    <script src="directives/menu.directive.js"></script>
 </body>
 
 </html>
