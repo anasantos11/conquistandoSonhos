@@ -8,3 +8,29 @@
     background-size: cover;
     opacity: 0.4;
 }*/
+
+/* Imagem de fundo da página inicial*/
+.img-main {
+    background-image: url(../../img/fundo-index.jpg);
+    transform: translate3d(0px, 0px, 0px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+/*Escurecimento da imagem do fundo da página inicial */
+
+.header-filter:before{
+    background: rgba(0,0,0,.8);
+}
+/*Alterado tamanho máximo da altura das imagens dos cards */
+.card-img-top {
+    max-height: 163px;
+}
+
+/*Linha horizontal abaixo do nav */
+hr {
+    color: #7b1818;
+    background-color: #7b1818;
+    height: 5px;
+  }

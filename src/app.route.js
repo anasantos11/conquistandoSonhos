@@ -9,7 +9,7 @@ angular
                 url: "/conquistandoSonhos",
                 views: {
                     'app@': {
-                        templateUrl: 'components/home/home.html',
+                        templateUrl: 'components/home/home2.html',
                         controller: 'Main',
                         controllerAs: 'vm'
                     }

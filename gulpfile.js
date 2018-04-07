@@ -4,15 +4,19 @@ var concat = require('gulp-concat');
 var paths = {
     js: [
         "node_modules/jquery/dist/jquery.js",
-        "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
-        "node_modules/angular/angular.js",
-        "node_modules/@uirouter/angularjs/release/angular-ui-router.js",
+        "src/assets/js/popper.min.js", /*VERIFICAR */
         "node_modules/moment/moment.js",
+        "src/assets/js/bootstrap-datetimepicker.min.js",/*VERIFICAR */
+        "src/assets/js/nouislider.min.js",/*VERIFICAR */
+        "src/assets/js/bootstrap-material-design.min.js",/*VERIFICAR */
+        "src/assets/js/material-kit.min.js",/*VERIFICAR */
+        "node_modules/angular/angular.js",        
+        "node_modules/@uirouter/angularjs/release/angular-ui-router.js",
         "node_modules/chart.js/dist/Chart.js",
         "node_modules/angular-chart.js/dist/angular-chart.min.js"
     ],
     css: [
-        "node_modules/bootstrap/dist/css/bootstrap.css"        
+        "src/assets/css/material-kit.min.css"
     ]
 };
 

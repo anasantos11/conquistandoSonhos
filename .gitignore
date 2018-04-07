@@ -1,5 +1,3 @@
 node_modules/*
 package-lock.json
-src/shared/libs/css/public.libs.css
-src/shared/libs/js/public.libs.js
-src/shared/libs/fonts/*
+src/assets/*
