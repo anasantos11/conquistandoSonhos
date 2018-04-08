@@ -19,6 +19,7 @@
     <main class="page-header header-filter img-main d-block">
         <div class="container" ng-controller="DespesaCtrl as vm" ng-init="vm.atualizarGraficoDespesa()">
             <div class="row">
+                <!-- Bloco de despesas -->
                 <div class="col-7">
                     <div class="card">
                         <div class="card-body">
@@ -36,6 +37,7 @@
                                     </div>
                                 </div>
 
+                                <!--Despesas Aleatórias -->
                                 <h5 class="card-title">Despesas</h5>
                                 <p class="card-text">Quanto você gasta pos mês?</p>
                                 <div class="row">
@@ -51,25 +53,31 @@
                                         <label class="bmd-label-floating">Valor despesas corte</label>
                                         <input ng-model="vm.valorCorte" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
                                     </div>
-                                    <div class="col-12">
-                                        <span class="badge badge-pill badge-warning">Despesas Pessoais</span>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="bmd-label-floating">Valor despesas essenciais</label>
-                                        <input ng-model="vm.valorEssencial" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
-                                    </div>
                                 </div>
-
+                                <!--Despesas Moradia -->
+                                <h5 class="card-title text-warning">Despesas Moradia</h5>
+                                <despesa titulo="'Aluguel'" valor-despesa="0" classificacao-despesa="'essencial'">
+                                </despesa>
+                                <despesa titulo="'Condomínio'" valor-despesa="0" classificacao-despesa="'essencial'">
+                                </despesa>
+                                <despesa titulo="'IPTU'" valor-despesa="0" classificacao-despesa="'essencial'">
+                                </despesa>
+                                <despesa titulo="'Água'" valor-despesa="0" classificacao-despesa="'essencial'">
+                                </despesa>
+                                <despesa titulo="'Luz'" valor-despesa="0" classificacao-despesa="'essencial'">
+                                </despesa>
+                                <!--Despesas Pessoais -->
+                            </form>
                         </div>
                     </div>
                 </div>
+                <!-- Bloco dos gráficos -->
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Renda x Gastos</h5>
                             <p class="card-text">Veja a comparação da sua renda com seus gastos.</p>
-                            <canvas id="pie" class="chart chart-pie" chart-data="vm.comparativo.data" chart-labels="vm.comparativo.labels"
-                                chart-options="vm.options">
+                            <canvas id="pie" class="chart chart-pie" chart-data="vm.comparativo.data" chart-labels="vm.comparativo.labels" chart-options="vm.options">
                             </canvas>
                         </div>
                     </div>
@@ -96,6 +104,7 @@
     <script src="app.module.js"></script>
     <script src="controllers/despesa.controller.js"></script>
     <script src="directives/menu.directive.js"></script>
+    <script src="directives/despesa.directive.js"></script>
 </body>
 
 </html>

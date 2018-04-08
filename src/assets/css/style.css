@@ -47,8 +47,15 @@ hr {
     background-image: linear-gradient(0deg, #f08f00 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #d2d2d2 1px, hsla(0, 0%, 82%, 0) 0);
 }
 
+/*Alterado cor da linha do select e limitado o tamanho da altura */
+
+.form-control:read-only {
+    max-height: 36px;
+    background-image: linear-gradient(0deg, #f08f00 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #d2d2d2 1px, hsla(0, 0%, 82%, 0) 0);
+}
+
 /*Alterado cor da label do input */
 
 .is-focused [class*=" bmd-label"], .is-focused [class^=bmd-label] {
-    color:#f08f00;
+    color: #f08f00;
 }
