@@ -3,20 +3,24 @@ var concat = require('gulp-concat');
 
 var paths = {
     js: [
-        "node_modules/jquery/dist/jquery.js",
-        "src/assets/js/popper.min.js", /*VERIFICAR */
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/popper.js/dist/umd/popper.min.js",
         "node_modules/moment/moment.js",
-        "src/assets/js/bootstrap-datetimepicker.min.js",/*VERIFICAR */
-        "src/assets/js/nouislider.min.js",/*VERIFICAR */
-        "src/assets/js/bootstrap-material-design.min.js",/*VERIFICAR */
-        "src/assets/js/material-kit.min.js",/*VERIFICAR */
-        "node_modules/angular/angular.js",        
-        "node_modules/@uirouter/angularjs/release/angular-ui-router.js",
-        "node_modules/chart.js/dist/Chart.js",
-        "node_modules/angular-chart.js/dist/angular-chart.min.js"
+        "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+        "node_modules/bootstrap-datetimepicker-npm/build/js/bootstrap-datetimepicker.min.js",
+        "node_modules/nouislider/distribute/nouislider.min.js",
+        "node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js",
+        "src/assets/material_kit/js/material-kit.min.js",
+        "src/assets/material_kit/js/material-bootstrap-wizard.js",
+        "node_modules/jquery-validation/dist/jquery.validate.min.js",
+        "node_modules/angular/angular.min.js",
+        "node_modules/chart.js/dist/Chart.min.js",
+        "node_modules/angular-chart.js/dist/angular-chart.min.js",
+
     ],
     css: [
-        "src/assets/css/material-kit.min.css"
+        "src/assets/material_kit/css/material-kit.css",
+        "src/assets/material_kit/css/material-bootstrap-wizard.css"
     ]
 };
 
@@ -24,14 +28,14 @@ var paths = {
 gulp.task('libs-js', function () {
     gulp.src(paths.js)
         .pipe(concat('public.libs.js'))
-        .pipe(gulp.dest('src/shared/libs/js'));
+        .pipe(gulp.dest('src/assets/js'));
 });
 
 //Tarefa para concatenar as libs css public e salvar arquivo em src/shared/libs/css
 gulp.task('libs-css', function () {
     gulp.src(paths.css)
         .pipe(concat('public.libs.css'))
-        .pipe(gulp.dest('src/shared/libs/css'))
+        .pipe(gulp.dest('src/assets/css'))
 });
 
 gulp.task("public-libs", [

@@ -12,17 +12,18 @@
     "author": "Ana Paula dos Santos, Carlos Felipe de Almeida Arantes",
     "license": "MIT",
     "dependencies": {
-        "jquery": "^3.3.1",
-        "popper.js": "^1.14.3",
-        "moment": "^2.21.0",
-        "bootstrap-datetimepicker-npm" : "^4.17.37-npm",
-        "nouislider": "^11.1.0",
-        "bootstrap-material-design": "^4.1.1",
-        "@uirouter/angularjs": "^1.0.15",
         "angular": "^1.6.9",
+        "angular-chart.js": "^1.1.1",
+        "bootstrap": "^3.3.7",
+        "bootstrap-datetimepicker-npm": "^4.17.37-npm",
+        "bootstrap-material-design": "^4.1.1",
         "chart.js": "^2.7.2",
-        "angular-chart.js": "^1.1.1"
-        
+        "jquery": "^3.3.1",
+        "jquery-validation": "^1.17.0",
+        "moment": "^2.21.0",
+        "nouislider": "^11.1.0",
+        "popper.js": "^1.14.3",
+        "twitter-bootstrap-wizard": "^1.2.0"
     },
     "devDependencies": {
         "gulp": "^3.9.1",

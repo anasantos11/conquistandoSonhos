@@ -18,78 +18,81 @@
     <cabecalho></cabecalho>
     <main class="page-header header-filter img-main d-block">
         <div class="container" ng-controller="DespesaCtrl as vm" ng-init="vm.atualizarGraficoDespesa()">
-            <div class="row">
-                <!-- Bloco de despesas -->
-                <div class="col-7">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Salários e outras rendas</h5>
-                            <p class="card-text">Quanto você ganha pos mês?</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <div class="card wizard-card" data-color="orange" id="wizard">
                             <form>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="bmd-label-floating">Valor do salário</label>
-                                        <input ng-model="vm.salario" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
+                                <div class="wizard-header">
+                                    <h3 class="wizard-title">
+                                        Renda x Gasto
+                                    </h3>
+                                    <h5>Responda as questões abaixo para gerarmos o relatório com a relação de renda e despesa.</h5>
+                                </div>
+                                <div class="wizard-navigation">
+                                    <ul>
+                                        <li>
+                                            <a href="#renda" data-toggle="tab">Rendas</a>
+                                        </li>
+                                        <li>
+                                            <a href="#moradia" data-toggle="tab">Despesas Moradia</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="renda">
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <h4 class="info-text">O 1º passo é informar os valores de suas rendas mensais.</h4>
+                                            </div>
+                                            <div class="form-group offset-2 col-4">
+                                                <label>Salário mensal</label>
+                                                <input ng-model="vm.salario" type="number" min="1" step="any" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label>Total de outras rendas mensais</label>
+                                                <input ng-model="vm.outrasReceitas" type="number" min="1" step="any" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="bmd-label-floating">Valor de outras rendas</label>
-                                        <input ng-model="vm.outrasReceitas" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
+                                    <div class="tab-pane" id="moradia">
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <h4 class="info-text">O 2º passo é informar os valores gastos com moradia.</h4>
+                                            </div>
+                                            <div class="offset-1 col-2">
+                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                            </div>
+                                            <div class="col-4 pl-0">
+                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                            </div>
+                                            <div class="col-4 pl-0">
+                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                            </div>
+                                            <despesa titulo="'Aluguel'" valor-despesa="0" tipo-despesa="'essencial'" class="form-row col-12">
+                                            </despesa>
+                                            <despesa titulo="'IPTU'" valor-despesa="0" tipo-despesa="'essencial'" class="form-row col-12">
+                                            </despesa>
+                                            <despesa titulo="'Condomínio'" valor-despesa="0" tipo-despesa="'essencial'" class="form-row col-12">
+                                            </despesa>
+                                            <despesa titulo="'Água'" valor-despesa="0" tipo-despesa="'possoReduzir'" class="form-row col-12">
+                                            </despesa>
+                                            <despesa titulo="'Luz'" valor-despesa="0" tipo-despesa="'possoReduzir'" class="form-row col-12">
+                                            </despesa>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <!--Despesas Aleatórias -->
-                                <h5 class="card-title">Despesas</h5>
-                                <p class="card-text">Quanto você gasta pos mês?</p>
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label class="bmd-label-floating">Valor despesas essenciais</label>
-                                        <input ng-model="vm.valorEssencial" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="bmd-label-floating">Valor despesas redução</label>
-                                        <input ng-model="vm.valorReducao" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="bmd-label-floating">Valor despesas corte</label>
-                                        <input ng-model="vm.valorCorte" type="number" class="form-control" ng-change="vm.atualizarGraficoDespesa()">
-                                    </div>
-                                </div>
-                                <!--Despesas Moradia -->
-                                <h5 class="card-title text-warning">Despesas Moradia</h5>
-                                <despesa titulo="'Aluguel'" valor-despesa="0" classificacao-despesa="'essencial'">
-                                </despesa>
-                                <despesa titulo="'Condomínio'" valor-despesa="0" classificacao-despesa="'essencial'">
-                                </despesa>
-                                <despesa titulo="'IPTU'" valor-despesa="0" classificacao-despesa="'essencial'">
-                                </despesa>
-                                <despesa titulo="'Água'" valor-despesa="0" classificacao-despesa="'essencial'">
-                                </despesa>
-                                <despesa titulo="'Luz'" valor-despesa="0" classificacao-despesa="'essencial'">
-                                </despesa>
-                                <!--Despesas Pessoais -->
                             </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Bloco dos gráficos -->
-                <div class="col-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Renda x Gastos</h5>
-                            <p class="card-text">Veja a comparação da sua renda com seus gastos.</p>
-                            <canvas id="pie" class="chart chart-pie" chart-data="vm.comparativo.data" chart-labels="vm.comparativo.labels" chart-options="vm.options">
-                            </canvas>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Distrubição dos gastos</h5>
-                            <p class="card-text">Veja como está a distribução dos seus gastos</p>
-                            <canvas id="pie" class="chart chart-pie" chart-data="vm.distribuicaoGastros.data" chart-labels="vm.distribuicaoGastros.labels"
-                                chart-options="vm.options">
-                            </canvas>
-
+                            <div class="wizard-footer">
+                                <div class="float-right">
+                                    <input type='button' class='btn btn-next btn-fill btn-danger btn-wd float-right' name='next' value='Próximo' />
+                                    <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd float-right' name='finish' value='Finalizar' />
+                                </div>
+                                <div class="float-left">
+                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd float-left' name='previous' value='Previous' />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
