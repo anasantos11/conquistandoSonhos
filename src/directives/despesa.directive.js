@@ -1,12 +1,12 @@
 angular
     .module('sonhosApp').directive('despesa', function () {
         return {
-            template: '<div class="offset-1 col-2">' + 
+            template: '<div class="offset-1 col-3">' + 
                         '<span class="input-group-text">' + 
                             '{{model.nome}}' + 
                         '</span>' + 
                     '</div>' + 
-                    '<div class="col-4">' + 
+                    '<div class="col-3">' + 
                         '<input  ng-model="model.valor" type="number"  class="form-control" placeholder="Valor do(a) {{model.nome | lowercase}}">' + 
                     '</div>' + 
                     '<div class="col-4">' + 
