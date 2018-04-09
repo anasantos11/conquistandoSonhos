@@ -51,3 +51,9 @@ hr {
 .is-focused [class*=" bmd-label"], .is-focused [class^=bmd-label] {
     color: #f08f00;
 }
+
+/*Tamanho mínimo para cards */
+
+.full-card {
+    height: calc(100vh - 116px);
+}

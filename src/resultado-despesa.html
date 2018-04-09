@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="sonhosApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Software para auxiliar na conquista de sonhos ou objetivos financeiros">
+    <title>
+        Conquistando Sonhos
+    </title>
+    <link rel="stylesheet" href="assets/css/public.libs.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <cabecalho></cabecalho>
+    <main class="page-header header-filter img-main d-block">
+        <div class="container" ng-controller="ResultadoDespesaCtrl as vm">
+            <div class="row">
+                <!-- Bloco dos gráficos -->
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body full-card">
+                            <h3 class="card-title">Renda x Gastos</h3>
+                            <h5 class="card-text">Veja a comparação da sua renda com seus gastos.</h5>
+                            <canvas id="pie1" class="chart chart-pie" chart-data="vm.comparativo.data" chart-labels="vm.comparativo.labels" chart-options="vm.comparativo.options">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body full-card">
+                            <h3 class="card-title">Distrubição dos gastos</h3>
+                            <h5 class="card-text">Veja como está a distribução dos seus gastos</h5>
+                            <canvas id="pie2" class="chart chart-pie" chart-data="vm.distribuicaoGastos.data" chart-labels="vm.distribuicaoGastos.labels"
+                                chart-options="vm.distribuicaoGastos.options">
+                            </canvas>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--   Bibliotecas públicas-->
+    <script src="assets/js/public.libs.js"></script>
+    <!-- Métodos compartilhados -->
+    <script src="app.util.js"></script>
+    <!-- Arquivos AngularJS -->
+    <script src="app.module.js"></script>
+    <script src="controllers/resultado-despesa.controller.js"></script>
+    <script src="directives/menu.directive.js"></script>
+    <script src="directives/despesa.directive.js"></script>
+</body>
+
+</html>

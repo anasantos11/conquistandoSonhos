@@ -1,17 +1,16 @@
 angular
     .module('sonhosApp').directive('despesa', function () {
         return {
-            restrict: 'AE',
             template: '<div class="offset-1 col-2">' + 
                         '<span class="input-group-text">' + 
-                            '{{titulo}}' + 
+                            '{{model.nome}}' + 
                         '</span>' + 
                     '</div>' + 
                     '<div class="col-4">' + 
-                        '<input type="number" min="1" step="any" class="form-control" placeholder="Valor do {{titulo | lowercase}}">' + 
+                        '<input  ng-model="model.valor" type="number"  class="form-control" placeholder="Valor do(a) {{model.nome | lowercase}}">' + 
                     '</div>' + 
                     '<div class="col-4">' + 
-                    '<select class="form-control" ng-model="tipoDespesa">' + 
+                    '<select class="form-control" ng-model="model.tipo">' + 
                             '<option selected value="">Selecione</option>' + 
                             '<option value="essencial">Essencial</option>' + 
                             '<option value="possoReduzir">Posso reduzir</option>' + 
@@ -19,13 +18,10 @@ angular
                         '</select>' + 
                     '</div>',
             scope: {
-                titulo: "=",
-                valorDespesa: "=",
-                tipoDespesa: "="
-
+                model: "=",
+                titulo: "="
             },
             link: function (scope, element, attrs) {
-
             }
         };
     });
