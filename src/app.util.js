@@ -1,13 +1,13 @@
-function isNullOrEmpty(campo){
-    if(campo == undefined || campo == "")
+function isNullOrEmpty(campo) {
+    if (campo == undefined || campo == "")
         return true;
 }
 
-function validarValor(valor){
-    if(isNullOrEmpty(valor)){
+function validarValor(valor) {
+    if (isNullOrEmpty(valor)) {
         return 0;
-    }else{
+    } else {
         return valor;
     }
-    
+
 }

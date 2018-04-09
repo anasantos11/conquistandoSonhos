@@ -1,6 +1,5 @@
 /* FUNDO PAGINA INICIAL */
 
-
 /* Imagem de fundo da página inicial*/
 
 .img-main {
@@ -54,6 +53,19 @@ hr {
 
 /*Tamanho mínimo para cards */
 
-.full-card {
-    height: calc(100vh - 116px);
+@media (min-width: 992px) {
+    .full-card {
+        height: calc(100vh - 116px);
+    }
+}
+
+/* Erro */
+
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus, .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
+    box-shadow: none;
+    background-image: linear-gradient(0deg, #f33527 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #d2d2d2 1px, hsla(0, 0%, 82%, 0) 0);
+}
+
+input:disabled:hover {
+   cursor: not-allowed;
 }

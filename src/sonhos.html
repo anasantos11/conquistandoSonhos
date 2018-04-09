@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="sonhosApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Software para auxiliar na conquista de sonhos ou objetivos financeiros">
+    <title>
+        Conquistando Sonhos
+    </title>
+    <link rel="stylesheet" href="assets/css/public.libs.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <cabecalho></cabecalho>
+    <main class="page-header header-filter img-main d-block">
+        <div class="container" ng-controller="SonhoCtrl as vm" ng-init="vm.calcularSonho()">
+            <div class="row">
+                <!-- Bloco de despesas -->
+                <div class="col-12 col-sm-12 col-md-4 m-auto">
+                    <div class="card sonho">
+                        <div class="card-body full-card">
+                            <h3 class="card-title">Planejando a realização de um sonho</h3>
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <label class="bmd-label-static">Valor do seu sonho
+                                        </label>
+                                        <input ng-model="vm.valorSonho" ng-change="vm.calcularSonho()" min="1" type="number" class="form-control" required>
+                                        <div class="invalid-feedback">
+                                            Informe o valor do sonho, o valor mínimo é 1.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-12">
+                                        <label>Em quantos meses pretende realizá-lo
+                                        </label>
+                                        <input ng-model="vm.meses" ng-change="vm.calcularSonho()" type="number" min="1" class="form-control" required>
+                                        <div class="invalid-feedback">
+                                            Informe em quantos meses pretende realizar o sonho. </br> O valor mínimo é 1.
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label>Valor poupado até o momento
+                                        </label>
+                                        <input ng-model="vm.valorPoupado" ng-change="vm.calcularSonho()" type="number" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <h4 class="card-title">Para conquistar o sonho você precisa economizar:
+                                            <span class="text-danger font-weight-bold"> {{vm.valorEconomizar | currency : 'R$'}}</span>
+                                        </h4>
+                                        <h4 class="card-title" ng-show="vm.valorSobra > 0">Dessa forma ainda vai sobrar para você gastar:
+                                            <span class="text-danger font-weight-bold"> {{vm.valorSobra | currency : 'R$'}}</span>
+                                        </h4>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--   Bibliotecas públicas-->
+    <script src="assets/js/public.libs.js"></script>
+    <!-- Métodos compartilhados -->
+    <script src="app.util.js"></script>
+    <!-- Arquivos AngularJS -->
+    <script src="app.module.js"></script>
+    <script src="controllers/sonho.controller.js"></script>
+    <script src="directives/menu.directive.js"></script>
+    <script src="directives/despesa.directive.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('change', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                        // $(".form-control:invalid").focus();
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>
