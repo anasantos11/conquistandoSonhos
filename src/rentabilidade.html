@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="sonhosApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Software para auxiliar na conquista de sonhos ou objetivos financeiros">
+    <title>
+        Conquistando Sonhos
+    </title>
+    <link rel="stylesheet" href="assets/css/public.libs.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <cabecalho></cabecalho>
+    <main class="page-header header-filter img-main d-block">
+        <div class="container" ng-controller="RentabilidadeCtrl as vm" ng-init="">
+            <div class="row">
+                <div class="col-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Simulação de rentabilidade em determinado período</h5>
+                            <p class="card-text">Adicione o montante total dos investimentos por natureza:</p>
+                            <form>
+                                <div class="row">
+                                    <div class="form-group col-md-5">
+                                        <label class="bmd-label-floating">Qual o período em anos desejado?</label>
+                                        <input ng-model="vm.periodo" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="bmd-label-floating">Renda Fixa</label>
+                                        <input ng-model="vm.rf" type="number" class="form-control"
+                                        ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
+                                        <input ng-model="vm.rentabilidadeRf" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="bmd-label-floating">Renda Variável</label>
+                                        <input ng-model="vm.rv" type="number" class="form-control"
+                                         ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
+                                        <input ng-model="vm.rentabilidadeRv" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="bmd-label-floating">Previdência Privada</label>
+                                        <input ng-model="vm.prev" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
+                                        <input ng-model="vm.rentabilidadePrev" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="bmd-label-floating">Multimercados</label>
+                                        <input ng-model="vm.mm" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
+                                        <input ng-model="vm.rentabilidadeMm" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Rentabilidade no período</h5>
+                            <p class="card-text">Veja a comparação da sua renda com seus gastos.</p>
+                            <canvas id="bar" class="chart chart-bar" chart-series="vm.rentabilidade.series" chart-data="vm.rentabilidade.data" chart-labels="vm.rentabilidade.labels"  chart-options="vm.options">
+                            </canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Rentabilidade X Poupança</h5>
+                            <p class="card-text">Veja a sua carteira versus um investimento na poupança</p>
+                            <canvas id="line" class="chart chart-line" chart-series="vm.poupanca.series" 
+                            chart-data="vm.poupanca.data" chart-labels="vm.poupanca.labels"
+                                chart-options="vm.options">
+                            </canvas>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--   Bibliotecas públicas-->
+    <script src="assets/js/public.libs.js"></script>
+    <!-- Métodos compartilhados -->
+    <script src="app.util.js"></script>
+    <!-- Arquivos AngularJS -->
+    <script src="app.module.js"></script>
+    <script src="controllers/rentabilidade.controller.js"></script>
+    <script src="directives/menu.directive.js"></script>
+</body>
+
+</html>
