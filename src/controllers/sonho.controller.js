@@ -11,7 +11,6 @@ angular.module('sonhosApp')
         vm.novoSonho();
 
         vm.calcularSonho = function(){
-            debugger;
             vm.valorSonho = validarValor(vm.valorSonho);
             vm.valorPoupado = validarValor(vm.valorPoupado);
             vm.meses = validarValor(vm.meses);
