@@ -57,6 +57,9 @@ hr {
     .full-card {
         height: calc(100vh - 116px);
     }
+    .medium-card {
+        height: 400px;
+    }
 }
 
 /* Erro */
