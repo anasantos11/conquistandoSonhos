@@ -5,10 +5,7 @@ var paths = {
     js: [
         "node_modules/jquery/dist/jquery.min.js",
         "node_modules/popper.js/dist/umd/popper.min.js",
-        "node_modules/moment/moment.js",
         "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
-        "node_modules/bootstrap-datetimepicker-npm/build/js/bootstrap-datetimepicker.min.js",
-        "node_modules/nouislider/distribute/nouislider.min.js",
         "node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js",
         "src/assets/material_kit/js/material-kit.min.js",
         "src/assets/material_kit/js/material-bootstrap-wizard.js",

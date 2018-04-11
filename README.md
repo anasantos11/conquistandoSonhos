@@ -16,20 +16,17 @@ O objetivo do sistema é projetar dados para ajudar o usuário no planejamento p
 
 	- Exibir distribuição de gastos financeiro por tipos de despesas: Mostrará através de gráfico a distribuição de gastos do usuário por tipos de despesas. Para isso o usuário informará a sua receita mensal e os valores que gasta em cada despesa. 
 
-	- Simular valor de economia mensal para conquista de um sonho: Após o usuário informar o valor da compra, o mês e ano que pretende realizar o sonho, quando começará a guardar dinheiro, valor que pretende economizar mensalmente e valor que já economizou, iremos sugerir um valor que ele pode economizar por mês, com base nas informações inseridas por ele, para conseguir realizar a compra na data escolhida para realizar o sonho.
+	- Simular valor de economia mensal para conquista de um sonho: Após o usuário informar o valor da compra, ano que pretende realizar o sonho, valor que já economizou, iremos sugerir um valor que ele pode economizar por mês, com base nas informações inseridas por ele, para conseguir realizar a compra na data escolhida para realizar o sonho.
 
 **Dependências do sistema**
 
 	- angular versão = 1.6.9
 	- angular-chart.js versão =  1.1.1
 	- bootstrap versão =  3.3.7
-	- botstrap-datetimepicker-npm versão =  4.17.37-npm
 	- bootstrap-material-design versão =  4.1.1
 	- chart.js versão =  2.7.2
 	- jquery versão =  3.3.1
 	- jquery-validation versão =  1.17.0
-	- moment versão =  2.21.0
-	- nouislider versão =  11.1.0
 	- popper.js versão =  1.14.3
 	- twitter-bootstrap-wizard versão =  1.2.0"
 	- material-kit versão 2.0.2

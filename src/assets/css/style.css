@@ -70,5 +70,42 @@ hr {
 }
 
 input:disabled:hover {
-   cursor: not-allowed;
+    cursor: not-allowed;
+}
+
+/*HAS ERROR*/
+
+/*ERRO WIZARD*/
+
+.error{
+    color: #f33527 !important;
+}
+
+/*Mudança de cor da label quando elemento estiver válido ou inválido*/
+.has-error [class^='bmd-label'], .has-success [class*=' bmd-label'] {
+    color: #f33527;
+}
+
+.has-success [class^='bmd-label'], .has-success [class*=' bmd-label'] {
+    color: #4caf50;
+}
+
+
+/*Mudança de cor quando elemento estiver válido ou inválido*/
+.form-group.has-error.is-focused .form-control {
+    box-shadow: none;
+    background-image: linear-gradient(0deg, #f33527 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #d2d2d2 1px, hsla(0, 0%, 82%, 0) 0);
+}
+
+.form-group.has-success.is-focused .form-control {
+    box-shadow: none;
+    background-image: linear-gradient(0deg, #4caf50 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #d2d2d2 1px, hsla(0, 0%, 82%, 0) 0);
+}
+
+.form-group.has-error.is-focused [class*=" bmd-label"], .form-group.has-error.is-focused [class^=bmd-label] {
+    color: #f44336;
+}
+
+.form-group.has-success.is-focused [class*=" bmd-label"], .form-group.has-success.is-focused [class^=bmd-label] {
+    color: #4caf50;
 }
