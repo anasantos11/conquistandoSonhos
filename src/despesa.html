@@ -17,215 +17,213 @@
 <body>
     <cabecalho></cabecalho>
     <main class="page-header header-filter img-main d-block">
-        <div class="container" ng-controller="DespesaCtrl as vm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card wizard-card" data-color="orange" id="wizard">
-                            <form>
-                                <div class="wizard-header">
-                                    <h3 class="wizard-title">
-                                        Renda x Gasto
-                                    </h3>
-                                    <h5>Responda as questões abaixo para gerarmos o relatório com a relação de renda e despesa.</h5>
-                                </div>
-                                <div class="wizard-navigation">
-                                    <ul>
-                                        <li>
-                                            <a href="#renda" data-toggle="tab">Salários</a>
-                                        </li>
-                                        <li>
-                                            <a href="#moradia" data-toggle="tab">Moradia</a>
-                                        </li>
-                                        <li>
-                                            <a href="#transporte" data-toggle="tab">Transporte</a>
-                                        </li>
-                                        <li>
-                                            <a href="#educacao" data-toggle="tab">Educação</a>
-                                        </li>
-                                        <li>
-                                            <a href="#pessoais" data-toggle="tab">Pessoais</a>
-                                        </li>
-                                        <li>
-                                            <a href="#saude" data-toggle="tab">Saúde</a>
-                                        </li>
-                                        <li>
-                                            <a href="#lazer" data-toggle="tab">Lazer</a>
-                                        </li>
-                                        <li>
-                                            <a href="#financeiro" data-toggle="tab">Financeiras</a>
-                                        </li>
+        <div class="container p-0" ng-controller="DespesaCtrl as vm">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card wizard-card" data-color="orange" id="wizard">
+                        <form>
+                            <div class="wizard-header">
+                                <h3 class="wizard-title">
+                                    Renda x Gasto
+                                </h3>
+                                <h5>Responda as questões abaixo para gerarmos o relatório com a relação de renda e despesa.</h5>
+                            </div>
+                            <div class="wizard-navigation">
+                                <ul>
+                                    <li>
+                                        <a href="#renda" data-toggle="tab">Salários</a>
+                                    </li>
+                                    <li>
+                                        <a href="#moradia" data-toggle="tab">Moradia</a>
+                                    </li>
+                                    <li>
+                                        <a href="#transporte" data-toggle="tab">Transporte</a>
+                                    </li>
+                                    <li>
+                                        <a href="#educacao" data-toggle="tab">Educação</a>
+                                    </li>
+                                    <li>
+                                        <a href="#pessoais" data-toggle="tab">Pessoais</a>
+                                    </li>
+                                    <li>
+                                        <a href="#saude" data-toggle="tab">Saúde</a>
+                                    </li>
+                                    <li>
+                                        <a href="#lazer" data-toggle="tab">Lazer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#financeiro" data-toggle="tab">Financeiras</a>
+                                    </li>
 
-                                    </ul>
-                                </div>
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="renda">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O 1º passo é informar os valores de suas rendas mensais.</h4>
-                                            </div>
-                                            <div class="form-group offset-2 col-4">
-                                                <label>Salário mensal</label>
-                                                <input ng-model="vm.salario" type="number" min="1" step="any" class="form-control">
-                                            </div>
-                                            <div class="form-group col-4">
-                                                <label>Total de outras rendas mensais</label>
-                                                <input ng-model="vm.outrasReceitas" type="number" min="1" step="any" class="form-control">
-                                            </div>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane" id="renda">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O 1º passo é informar os valores de suas rendas mensais.</h4>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane" id="moradia">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O 2º passo é informar os valores gastos com moradia.</h4>
-                                            </div>
-                                            <div class="offset-1 col-3">
-                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
-                                            </div>
-                                            <div class="col-3 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
-                                            </div>
-                                            <div class="col-4 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
-                                            </div>
-                                            <div ng-repeat="despesa in vm.despesas  | filter : {categoria : 'moradia'}" class="form-row col-12">
-                                                <despesa model="despesa" class="form-row col-12">
-                                                </despesa>
-                                            </div>
+                                        <div class="form-group offset-2 col-4">
+                                            <label>Salário mensal</label>
+                                            <input ng-model="vm.salario" type="number" min="1" step="any" class="form-control">
                                         </div>
-                                    </div>
-                                    <div class="tab-pane" id="transporte">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O 3º passo é informar os valores gastos com transportes.</h4>
-                                            </div>
-                                            <div class="offset-1 col-3">
-                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
-                                            </div>
-                                            <div class="col-3 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
-                                            </div>
-                                            <div class="col-4 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
-                                            </div>
-                                            <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'transporte'}" class="form-row col-12">
-                                                <despesa model="despesa" class="form-row col-12">
-                                                </despesa>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="educacao">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O 4º passo é informar os valores gastos com educação.</h4>
-                                            </div>
-                                            <div class="offset-1 col-3">
-                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
-                                            </div>
-                                            <div class="col-3 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
-                                            </div>
-                                            <div class="col-4 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
-                                            </div>
-                                            <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'educacao'}" class="form-row col-12">
-                                                <despesa model="despesa" class="form-row col-12">
-                                                </despesa>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="pessoais">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O 5º passo é informar os valores gastos pessoais.</h4>
-                                            </div>
-                                            <div class="offset-1 col-3">
-                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
-                                            </div>
-                                            <div class="col-3 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
-                                            </div>
-                                            <div class="col-4 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
-                                            </div>
-                                            <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'pessoais'}" class="form-row col-12">
-                                                <despesa model="despesa" class="form-row col-12">
-                                                </despesa>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="saude">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O 6º passo é informar os valores gastos com saúde.</h4>
-                                            </div>
-                                            <div class="offset-1 col-3">
-                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
-                                            </div>
-                                            <div class="col-3 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
-                                            </div>
-                                            <div class="col-4 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
-                                            </div>
-                                            <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'saude'}" class="form-row col-12">
-                                                <despesa model="despesa" class="form-row col-12">
-                                                </despesa>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="lazer">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O 7º passo é informar os valores gastos com lazer.</h4>
-                                            </div>
-                                            <div class="offset-1 col-3">
-                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
-                                            </div>
-                                            <div class="col-3 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
-                                            </div>
-                                            <div class="col-4 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
-                                            </div>
-                                            <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'lazer'}" class="form-row col-12">
-                                                <despesa model="despesa" class="form-row col-12">
-                                                </despesa>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="financeiro">
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <h4 class="info-text">O último passo é informar os valores dos gastos financeiros.</h4>
-                                            </div>
-                                            <div class="offset-1 col-3">
-                                                <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
-                                            </div>
-                                            <div class="col-3 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Valor</h5>
-                                            </div>
-                                            <div class="col-4 pl-0">
-                                                <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
-                                            </div>
-                                            <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'financeiro'}" class="form-row col-12">
-                                                <despesa model="despesa" class="form-row col-12">
-                                                </despesa>
-                                            </div>
+                                        <div class="form-group col-4">
+                                            <label>Total de outras rendas mensais</label>
+                                            <input ng-model="vm.outrasReceitas" type="number" min="1" step="any" class="form-control">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane" id="moradia">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O 2º passo é informar os valores gastos com moradia.</h4>
+                                        </div>
+                                        <div class="offset-1 col-3">
+                                            <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                        </div>
+                                        <div class="col-3 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                        </div>
+                                        <div class="col-4 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                        </div>
+                                        <div ng-repeat="despesa in vm.despesas  | filter : {categoria : 'moradia'}" class="form-row col-12">
+                                            <despesa model="despesa" class="form-row col-12">
+                                            </despesa>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="transporte">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O 3º passo é informar os valores gastos com transportes.</h4>
+                                        </div>
+                                        <div class="offset-1 col-3">
+                                            <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                        </div>
+                                        <div class="col-3 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                        </div>
+                                        <div class="col-4 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                        </div>
+                                        <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'transporte'}" class="form-row col-12">
+                                            <despesa model="despesa" class="form-row col-12">
+                                            </despesa>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="educacao">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O 4º passo é informar os valores gastos com educação.</h4>
+                                        </div>
+                                        <div class="offset-1 col-3">
+                                            <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                        </div>
+                                        <div class="col-3 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                        </div>
+                                        <div class="col-4 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                        </div>
+                                        <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'educacao'}" class="form-row col-12">
+                                            <despesa model="despesa" class="form-row col-12">
+                                            </despesa>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="pessoais">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O 5º passo é informar os valores gastos pessoais.</h4>
+                                        </div>
+                                        <div class="offset-1 col-3">
+                                            <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                        </div>
+                                        <div class="col-3 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                        </div>
+                                        <div class="col-4 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                        </div>
+                                        <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'pessoais'}" class="form-row col-12">
+                                            <despesa model="despesa" class="form-row col-12">
+                                            </despesa>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="saude">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O 6º passo é informar os valores gastos com saúde.</h4>
+                                        </div>
+                                        <div class="offset-1 col-3">
+                                            <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                        </div>
+                                        <div class="col-3 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                        </div>
+                                        <div class="col-4 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                        </div>
+                                        <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'saude'}" class="form-row col-12">
+                                            <despesa model="despesa" class="form-row col-12">
+                                            </despesa>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="lazer">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O 7º passo é informar os valores gastos com lazer.</h4>
+                                        </div>
+                                        <div class="offset-1 col-3">
+                                            <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                        </div>
+                                        <div class="col-3 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                        </div>
+                                        <div class="col-4 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                        </div>
+                                        <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'lazer'}" class="form-row col-12">
+                                            <despesa model="despesa" class="form-row col-12">
+                                            </despesa>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="financeiro">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <h4 class="info-text">O último passo é informar os valores dos gastos financeiros.</h4>
+                                        </div>
+                                        <div class="offset-1 col-3">
+                                            <h5 class="text-warning font-weight-bold m-0">Despesa</h5>
+                                        </div>
+                                        <div class="col-3 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Valor</h5>
+                                        </div>
+                                        <div class="col-4 pl-0">
+                                            <h5 class="text-warning font-weight-bold m-0">Tipo de despesa</h5>
+                                        </div>
+                                        <div ng-repeat="despesa in vm.despesas |  filter : {categoria : 'financeiro'}" class="form-row col-12">
+                                            <despesa model="despesa" class="form-row col-12">
+                                            </despesa>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            </form>
-                            <div class="wizard-footer">
-                                <div class="float-right">
-                                    <input type='button' class='btn btn-next btn-fill btn-danger btn-wd float-right' name='next' value='Próximo' />
-                                    <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd float-right' name='finish' value='Finalizar' ng-click="vm.gerarGraficos()"
-                                    />
-                                </div>
-                                <div class="float-left">
-                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd float-left' name='previous' value='Anterior' />
-                                </div>
+                        </form>
+                        <div class="wizard-footer">
+                            <div class="float-right">
+                                <input type='button' class='btn btn-next btn-fill btn-danger btn-wd float-right' name='next' value='Próximo' />
+                                <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd float-right' name='finish' value='Finalizar' ng-click="vm.gerarGraficos()"
+                                />
+                            </div>
+                            <div class="float-left">
+                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd float-left' name='previous' value='Anterior' />
                             </div>
                         </div>
                     </div>

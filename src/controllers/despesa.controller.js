@@ -54,7 +54,7 @@ angular.module('sonhosApp')
             planoSaude = { categoria: "saude", nome: "Plano de saúde", valor: 0.00, tipo: "essencial" },
             medico = { categoria: "saude", nome: "Médico", valor: 0.00, tipo: "possoReduzir" },
             dentista = { categoria: "saude", nome: "Dentista", valor: 0.00, tipo: "possoReduzir" },
-            farmacia = { categoria: "saude", nome: "Farmáxia", valor: 0.00, tipo: "possoReduzir" },
+            farmacia = { categoria: "saude", nome: "Farmácia", valor: 0.00, tipo: "possoReduzir" },
             outros = { categoria: "saude", nome: "Outros", valor: 0.00, tipo: "possoReduzir" },
             //Lazer
             cinema = { categoria: "lazer", nome: "Cinema", valor: 0.00, tipo: "possoReduzir" },
@@ -66,7 +66,7 @@ angular.module('sonhosApp')
             //Financeiros
             reservas = { categoria: "financeiro", nome: "Reservas financeiras", valor: 0.00, tipo: "essencial" },
             cartao = { categoria: "financeiro", nome: "Cartão", valor: 0.00, tipo: "possoCortar" },
-            chequeEspecial = { categoria: "financeiro", nome: "Chque especial", valor: 0.00, tipo: "possoCortar" },
+            chequeEspecial = { categoria: "financeiro", nome: "Cheque especial", valor: 0.00, tipo: "possoCortar" },
             emprestimo = { categoria: "financeiro", nome: "Empréstimos", valor: 0.00, tipo: "possoCortar" }
         ]
 

@@ -17,12 +17,12 @@
 <body>
     <cabecalho></cabecalho>
     <main class="page-header header-filter img-main d-block">
-        <div class="container" ng-controller="RentabilidadeCtrl as vm" ng-init="">
+        <div class="container p-0" ng-controller="RentabilidadeCtrl as vm" ng-init="">
             <div class="row">
                 <div class="col-7">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Simulação de rentabilidade em determinado período</h5>
+                            <h3 class="card-title">Simulação de rentabilidade em determinado período</h3>
                             <p class="card-text">Adicione o montante total dos investimentos por natureza:</p>
                             <form>
                                 <div class="row">
@@ -79,8 +79,11 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Rentabilidade no período</h5>
-                            <p class="card-text">Veja a comparação da sua renda com seus gastos.</p>
+                            <h3 class="card-title">Rentabilidade atual</h3>
+                            <p class="card-text">Veja a rentabilidade atual no período
+                                <span ng-show="vm.periodo > 0">
+                                    de  {{vm.periodo}} anos
+                                </span></p>
                             <canvas id="bar" class="chart chart-bar" chart-series="vm.rentabilidade.series" chart-data="vm.rentabilidade.data" chart-labels="vm.rentabilidade.labels"  chart-options="vm.options">
                             </canvas>
                         </div>
@@ -88,8 +91,8 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Rentabilidade X Poupança</h5>
-                            <p class="card-text">Veja a sua carteira versus um investimento na poupança</p>
+                            <h3 class="card-title">Rentabilidade atual x Poupança</h3>
+                            <p class="card-text">Veja a rentabilidade da sua carteira versus a rentabilidade que teria na poupança</p>
                             <canvas id="line" class="chart chart-line" chart-series="vm.poupanca.series" 
                             chart-data="vm.poupanca.data" chart-labels="vm.poupanca.labels"
                                 chart-options="vm.options">
