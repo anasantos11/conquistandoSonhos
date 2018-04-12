@@ -11,12 +11,11 @@ O objetivo do sistema é projetar dados para ajudar o usuário no planejamento p
 
 **Casos de uso**
 
-	- Projetar rentabilidade média de aplicações: Projetará um gráfico com uma rentabilidade média para as possíveis aplicações versus a poupança, de acordo com informações que serão fornecidas pelo usuário. Mostrando a diferença de rentabilidade entre os tipos de investimentos ao longo de certo tempo. As informações serão nome, idade, valor que deseja investir e tempo em meses ou anos que deseja resgatar o investimento. 
+	- Projetar rentabilidade média de aplicações: Projetará um gráfico com uma rentabilidade média para as possíveis aplicações versus a poupança, de acordo com informações que serão fornecidas pelo usuário. Mostrando a diferença de rentabilidade entre os tipos de investimentos ao longo de certo tempo. 
 
+	- Exibir distribuição de gastos financeiro por tipos de despesas: Mostrará através de gráfico a distribuição de gastos do usuário por tipos de despesas(essenciais, pode reduzir e pode cortar). Para isso o usuário informará a sua receita mensal e os valores que gasta em cada despesa. 
 
-	- Exibir distribuição de gastos financeiro por tipos de despesas: Mostrará através de gráfico a distribuição de gastos do usuário por tipos de despesas. Para isso o usuário informará a sua receita mensal e os valores que gasta em cada despesa. 
-
-	- Simular valor de economia mensal para conquista de um sonho: Após o usuário informar o valor da compra, ano que pretende realizar o sonho, valor que já economizou, iremos sugerir um valor que ele pode economizar por mês, com base nas informações inseridas por ele, para conseguir realizar a compra na data escolhida para realizar o sonho.
+	- Simular valor de economia mensal para conquista de um sonho: Após o usuário informar o valor da compra, em quantos meses realizar o sonho, valor que já economizou, iremos sugerir um valor que ele pode economizar por mês, com base nas informações inseridas por ele, para conseguir realizar a compra na data escolhida para realizar o sonho.
 
 **Dependências do sistema**
 
