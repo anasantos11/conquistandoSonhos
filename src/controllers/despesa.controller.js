@@ -2,6 +2,9 @@ angular.module('sonhosApp')
     .controller('DespesaCtrl', ["$window", function ($window) {
         var vm = this;
 
+        vm.salario = 0;
+        vm.outrasReceitas = 0;
+        
         vm.novoSomatorio = function () {
             vm.somatorio = {
                 rendas: 0,

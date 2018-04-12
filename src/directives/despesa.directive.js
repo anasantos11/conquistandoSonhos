@@ -7,7 +7,7 @@ angular
                         '</span>' + 
                     '</div>' + 
                     '<div class="col-3">' + 
-                        '<input  name="{{model.nome | lowercase}}" ng-model="model.valor" type="number"  class="form-control" placeholder="Valor do(a) {{model.nome | lowercase}}">' + 
+                        '<input  name="{{model.nome | lowercase}}" ng-model="model.valor" ui-money-mask currency-symbol="R$" class="form-control" placeholder="Valor do(a) {{model.nome | lowercase}}">' + 
                     '</div>' + 
                     '<div class="col-4">' + 
                     '<select class="form-control" ng-model="model.tipo">' + 

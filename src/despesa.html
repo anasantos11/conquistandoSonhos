@@ -65,11 +65,11 @@
                                         </div>
                                         <div class="form-group offset-2 col-4">
                                             <label>Salário mensal</label>
-                                            <input name="salario" ng-model="vm.salario" type="number" class="form-control">
+                                            <input name="salario" ng-model="vm.salario" type="text" ui-money-mask currency-symbol="R$" class="form-control">
                                         </div>
                                         <div class="form-group col-4">
                                             <label>Total de outras rendas mensais</label>
-                                            <input ng-model="vm.outrasReceitas" type="number" min="1" step="any" class="form-control">
+                                            <input ng-model="vm.outrasReceitas" type="text" ui-money-mask currency-symbol="R$" class="form-control">
                                         </div>
                                     </div>
                                 </div>
