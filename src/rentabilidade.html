@@ -28,49 +28,49 @@
                                 <div class="row">
                                     <div class="form-group col-md-5">
                                         <label class="bmd-label-floating">Qual o período em anos desejado?</label>
-                                        <input ng-model="vm.periodo" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                        <input ng-model="vm.periodo" type="text" ui-number-mask="0" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Renda Fixa</label>
-                                        <input ng-model="vm.rf" type="number" class="form-control"
+                                        <input ng-model="vm.rf" type="text" ui-money-mask currency-symbol="R$" class="form-control"
                                         ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                     <div class="form-group col-md-5">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
-                                        <input ng-model="vm.rentabilidadeRf" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                        <input ng-model="vm.rentabilidadeRf" type="text" ui-number-mask="0"  class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Renda Variável</label>
-                                        <input ng-model="vm.rv" type="number" class="form-control"
+                                        <input ng-model="vm.rv" type="text" ui-money-mask currency-symbol="R$" class="form-control"
                                          ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                     <div class="form-group col-md-5">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
-                                        <input ng-model="vm.rentabilidadeRv" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                        <input ng-model="vm.rentabilidadeRv" type="text" ui-number-mask="0"  class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Previdência Privada</label>
-                                        <input ng-model="vm.prev" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                        <input ng-model="vm.prev" type="text" ui-money-mask currency-symbol="R$" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                     <div class="form-group col-md-5">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
-                                        <input ng-model="vm.rentabilidadePrev" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                        <input ng-model="vm.rentabilidadePrev" type="text" ui-number-mask="0"  class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Multimercados</label>
-                                        <input ng-model="vm.mm" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                        <input ng-model="vm.mm" type="text" ui-money-mask currency-symbol="R$"  class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                     <div class="form-group col-md-5">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
-                                        <input ng-model="vm.rentabilidadeMm" type="number" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
+                                        <input ng-model="vm.rentabilidadeMm" type="text" ui-number-mask="0"  class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                 </div>
                         </div>
