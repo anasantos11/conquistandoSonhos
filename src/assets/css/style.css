@@ -109,3 +109,13 @@ input:disabled:hover {
 .form-group.has-success.is-focused [class*=" bmd-label"], .form-group.has-success.is-focused [class^=bmd-label] {
     color: #4caf50;
 }
+
+
+/*Icone no topo */ 
+.icon-top-right {
+    font-size: 14px;
+    position: absolute;
+    top: 4;
+    right: 5;
+    cursor: pointer;
+}
