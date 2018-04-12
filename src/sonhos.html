@@ -24,10 +24,13 @@
                     <div class="card sonho">
                         <div class="card-body full-card">
                             <h3 class="card-title">Planejando a realização de um sonho</h3>
+                            <p class="card-text">
+                                <span class="text-danger">*</span> Valores obrigatórios</p>
                             <form id="formSonho">
                                 <div class="row">
                                     <div class="form-group col-12">
                                         <label class="bmd-label-static">Valor do seu sonho
+                                            <span class="required-field text-danger">*</span>
                                         </label>
                                         <input name="valorSonho" ng-model="vm.valorSonho" ng-change="vm.calcularSonho()" type="text" ui-money-mask currency-symbol="R$"
                                             class="form-control" required>
@@ -35,6 +38,7 @@
 
                                     <div class="form-group col-12">
                                         <label>Em quantos meses pretende realizá-lo
+                                            <span class="required-field text-danger">*</span>
                                         </label>
                                         <input name="meses" ng-model="vm.meses" ng-change="vm.calcularSonho()" type="text" ui-number-mask(0) class="form-control"
                                             required>
