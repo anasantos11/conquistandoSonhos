@@ -2,9 +2,9 @@
 
 angular
     .module('sonhosApp', [
-        "chart.js"
+        "chart.js", 
+        "ui.utils.masks"
     ]);
-
 
 angular
     .module('sonhosApp').config(function (ChartJsProvider) {

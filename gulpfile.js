@@ -13,6 +13,7 @@ var paths = {
         "node_modules/angular/angular.min.js",
         "node_modules/chart.js/dist/Chart.min.js",
         "node_modules/angular-chart.js/dist/angular-chart.min.js",
+        "node_modules/angular-input-masks/releases/angular-input-masks-standalone.min.js"
 
     ],
     css: [

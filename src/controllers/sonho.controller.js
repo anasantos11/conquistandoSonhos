@@ -2,14 +2,6 @@ angular.module('sonhosApp')
     .controller('SonhoCtrl', [function () {
         var vm = this;
 
-        vm.novoSonho = function () {
-            vm.valorSonho = 1000;
-            vm.meses = 1;
-            vm.valorPoupado = 0;
-        };
-
-        vm.novoSonho();
-
         vm.calcularSonho = function(){
             vm.valorSonho = validarValor(vm.valorSonho);
             vm.valorPoupado = validarValor(vm.valorPoupado);
