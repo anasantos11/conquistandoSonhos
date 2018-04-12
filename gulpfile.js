@@ -18,9 +18,17 @@ var paths = {
     ],
     css: [
         "src/assets/material_kit/css/material-kit.css",
-        "src/assets/material_kit/css/material-bootstrap-wizard.css"
+        "src/assets/material_kit/css/material-bootstrap-wizard.css",
+        "node_modules/components-font-awesome/css/font-awesome.css"
     ]
 };
+
+//Tarefa para copiar as fonts do font-awesome para pasta src/shared/libs/js
+gulp.task('libs-fonts', function () {
+    gulp.src('node_modules/components-font-awesome/fonts/**/*')
+        .pipe(gulp.dest('src/assets/fonts'));
+});
+
 
 //Tarefa para concatenar as libs js public e salvar arquivo em src/shared/libs/js
 gulp.task('libs-js', function () {
@@ -38,7 +46,8 @@ gulp.task('libs-css', function () {
 
 gulp.task("public-libs", [
     "libs-css",
-    "libs-js"]
+    "libs-js",
+    "libs-fonts"]
 );
 
 // Tarefa padrão quando executado o comando GULP

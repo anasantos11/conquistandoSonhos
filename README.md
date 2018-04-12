@@ -22,10 +22,11 @@ O objetivo do sistema é projetar dados para ajudar o usuário no planejamento p
 
 	- angular versão = 1.6.9
 	- angular-chart.js versão =  1.1.1
-	-  angular-input-masks versão = 4.1.0
+	- angular-input-masks versão = 4.1.0
 	- bootstrap versão =  3.3.7
 	- bootstrap-material-design versão =  4.1.1
 	- chart.js versão =  2.7.2
+	- components-font-awesome versão = 4.7.0
 	- jquery versão =  3.3.1
 	- jquery-validation versão =  1.17.0
 	- popper.js versão =  1.14.3

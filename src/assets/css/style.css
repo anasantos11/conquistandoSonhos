@@ -113,9 +113,22 @@ input:disabled:hover {
 
 /*Icone no topo */ 
 .icon-top-right {
-    font-size: 14px;
+    font-size: 18px;
     position: absolute;
-    top: 4;
-    right: 5;
+    top: 4px;
+    right: 10px;
     cursor: pointer;
+}
+
+/*Hover*/
+
+/*links*/
+a.text-warning:hover, a.text-warning:focus {
+    color: #ff7708 !important;
+}
+/*buttons*/
+.btn.btn-success:focus, .btn.btn-success.focus, .btn.btn-success:hover {
+    color: #fff;
+    background-color: #268a2a;
+    border-color: #39843c;
 }
