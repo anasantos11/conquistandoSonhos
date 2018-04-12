@@ -24,6 +24,11 @@
     max-height: 163px;
 }
 
+.card{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /*Linha horizontal abaixo do nav */
 
 hr {
@@ -55,7 +60,7 @@ hr {
 
 @media (min-width: 992px) {
     .full-card {
-        height: calc(100vh - 116px);
+        min-height: calc(100vh - 56px - 30px);
     }
     .medium-card {
         height: 400px;

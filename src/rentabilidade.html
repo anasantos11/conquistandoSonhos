@@ -19,16 +19,16 @@
     <main class="page-header header-filter img-main d-block">
         <div class="container p-0" ng-controller="RentabilidadeCtrl as vm" ng-init="">
             <div class="row">
-                <div class="col-7">
+                <div class="col-5">
                     <div class="card">
                         <a class="text-warning font-weight-bold icon-top-right ml-2" ng-href="index.html">
                             <i class="fa fa-home m-1" aria-hidden="true"></i>Ir p/ página inicial</a>
-                        <div class="card-body">
+                        <div class="card-body full-card">
                             <h3 class="card-title">Simulação de rentabilidade em determinado período</h3>
                             <p class="card-text">Adicione o montante total dos investimentos por natureza:</p>
                             <form>
                                 <div class="row">
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-7">
                                         <label class="bmd-label-floating">Qual o período em anos desejado?</label>
                                         <input ng-model="vm.periodo" type="text" ui-number-mask="0" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
@@ -38,7 +38,7 @@
                                         <label class="bmd-label-floating">Renda Fixa</label>
                                         <input ng-model="vm.rf" type="text" ui-money-mask currency-symbol="R$" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
                                         <input ng-model="vm.rentabilidadeRf" type="text" ui-number-mask="0" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
@@ -48,7 +48,7 @@
                                         <label class="bmd-label-floating">Renda Variável</label>
                                         <input ng-model="vm.rv" type="text" ui-money-mask currency-symbol="R$" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
                                         <input ng-model="vm.rentabilidadeRv" type="text" ui-number-mask="0" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
@@ -58,7 +58,7 @@
                                         <label class="bmd-label-floating">Previdência Privada</label>
                                         <input ng-model="vm.prev" type="text" ui-money-mask currency-symbol="R$" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
                                         <input ng-model="vm.rentabilidadePrev" type="text" ui-number-mask="0" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
@@ -68,7 +68,7 @@
                                         <label class="bmd-label-floating">Multimercados</label>
                                         <input ng-model="vm.mm" type="text" ui-money-mask currency-symbol="R$" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Rentabilidade % em 12 meses</label>
                                         <input ng-model="vm.rentabilidadeMm" type="text" ui-number-mask="0" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
@@ -76,31 +76,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-7">
                     <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">Rentabilidade atual</h3>
-                            <p class="card-text">Veja a rentabilidade atual no período
-                                <span ng-show="vm.periodo > 0">
-                                    de {{vm.periodo}} anos
-                                </span>
-                            </p>
-                            <canvas id="bar" class="chart chart-bar" chart-series="vm.rentabilidade.series" chart-data="vm.rentabilidade.data" chart-labels="vm.rentabilidade.labels"
-                                chart-options="vm.options">
-                            </canvas>
+                        <a class="text-warning font-weight-bold icon-top-right ml-2" ng-href="index.html">
+                            <i class="fa fa-home m-1" aria-hidden="true"></i>Ir p/ página inicial</a>
+                        <div class="card-body full-card">
+                            <div class="col-12 p-0">
+                                <h5 class="card-title">Veja a rentabilidade atual no período
+                                    <span ng-show="vm.periodo > 0">
+                                        de {{vm.periodo}} anos
+                                    </span>
+                                </h5>
+                                <canvas id="bar" class="chart chart-bar" chart-series="vm.rentabilidade.series" chart-data="vm.rentabilidade.data" chart-labels="vm.rentabilidade.labels"
+                                    chart-options="vm.options">
+                                </canvas>
+                            </div>
+                            <div class="col-12 p-0">
+                                <h5 class="card-title">Veja a comparação da rentabilidade atual com a poupança</h5>
+                                <canvas id="line" class="chart chart-line" chart-series="vm.poupanca.series" chart-data="vm.poupanca.data" chart-labels="vm.poupanca.labels"
+                                    chart-options="vm.options">
+                                </canvas>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">Rentabilidade atual x Poupança</h3>
-                            <p class="card-text">Veja a rentabilidade da sua carteira versus a rentabilidade que teria na poupança</p>
-                            <canvas id="line" class="chart chart-line" chart-series="vm.poupanca.series" chart-data="vm.poupanca.data" chart-labels="vm.poupanca.labels"
-                                chart-options="vm.options">
-                            </canvas>
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
