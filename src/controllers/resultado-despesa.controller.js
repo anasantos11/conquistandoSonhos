@@ -7,11 +7,13 @@ angular.module('sonhosApp')
         vm.distribuicaoGastos = {};
         vm.comparativo = {};
 
-        vm.distribuicaoGastos.labels = ["Despesas Essenciais", "Despesas que posso reduzir", "Despesas que posso cortar"];
-        vm.distribuicaoGastos.data = [vm.somatorio.despesaEssencial, vm.somatorio.despesaReducao, vm.somatorio.despesaCorte];
+        if (!isNullOrEmpty(vm.somatorio)) {
+            vm.distribuicaoGastos.labels = ["Despesas Essenciais", "Despesas que posso reduzir", "Despesas que posso cortar"];
+            vm.distribuicaoGastos.data = [vm.somatorio.despesaEssencial, vm.somatorio.despesaReducao, vm.somatorio.despesaCorte];
 
+            vm.comparativo.labels = ["Rendas", "Despesas"];
+            vm.comparativo.data = [vm.somatorio.rendas, vm.somatorio.despesas];
+        }
 
-        vm.comparativo.labels = ["Rendas", "Despesas"];
-        vm.comparativo.data = [vm.somatorio.rendas, vm.somatorio.despesas];
 
     }]);
