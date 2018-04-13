@@ -24,8 +24,7 @@
                         <a class="text-warning font-weight-bold icon-top-right ml-2" ng-href="index.html">
                             <i class="fa fa-home m-1" aria-hidden="true"></i>Ir p/ página inicial</a>
                         <div class="card-body full-card">
-                            <h3 class="card-title">Simulação de rentabilidade em determinado período</h3>
-                            <p class="card-text">Adicione o montante total dos investimentos por natureza:</p>
+                            <h3 class="card-title">Simulação de rentabilidade</h3>
                             <form>
                                 <div class="row">
                                     <div class="form-group col-md-7">
@@ -33,6 +32,7 @@
                                         <input ng-model="vm.periodo" type="text" ui-number-mask="0" class="form-control" ng-change="vm.atualizarGraficoRentabilidade()">
                                     </div>
                                 </div>
+                                <p class="card-text"><br>Adicione o montante total dos investimentos por natureza:</p>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="bmd-label-floating">Renda Fixa</label>
@@ -94,7 +94,7 @@
                                 </canvas>
                             </div>
                             <div class="col-12 p-0">
-                                <h5 class="card-title">Veja a comparação da rentabilidade atual com a poupança</h5>
+                                <h5 class="card-title">Veja a comparação da rentabilidade informada com a poupança</h5>
                                 <canvas id="line" class="chart chart-line" chart-series="vm.poupanca.series" chart-data="vm.poupanca.data" chart-labels="vm.poupanca.labels"
                                     chart-options="vm.options">
                                 </canvas>

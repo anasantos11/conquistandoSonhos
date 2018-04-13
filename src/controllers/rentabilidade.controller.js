@@ -52,13 +52,6 @@ angular.module('sonhosApp')
                 var rv = isNullOrEmpty(vm.rv) ? 0 : (vm.rv);
                 var prev = isNullOrEmpty(vm.prev) ? 0 : (vm.prev);
                 var mm =isNullOrEmpty(vm.mm) ? 0 : (vm.mm);
-                /*    
-                var totalRentabilidade = (isNullOrEmpty(vm.rentabilidadeRf) ? 0 : (vm.rentabilidadeRf/100)*vm.rf)+
-                                        (isNullOrEmpty(vm.rentabilidadeRv) ? 0 : (vm.rentabilidadeRv/100)*vm.rv)+
-                                        (isNullOrEmpty(vm.rentabilidadePrev) ? 0 : (vm.rentabilidadePrev/100)*vm.prev)+
-                                        (isNullOrEmpty(vm.rentabilidadeMm) ? 0 : (vm.rentabilidadeMm/100)*vm.mm);
-                                        
-                **/
 
                 var total = rf+rv+prev+mm;
 
@@ -74,8 +67,8 @@ angular.module('sonhosApp')
 
                     acumuladoRF[i]=acumuladoRF[i-1]*(isNullOrEmpty(vm.rentabilidadeRf) ? 0 : (vm.rentabilidadeRf/100)+1);
                     acumuladoRV[i]=acumuladoRV[i-1]*(isNullOrEmpty(vm.rentabilidadeRv) ? 0 : (vm.rentabilidadeRv/100)+1);
-                    acumuladoMM[i]=acumuladoMM[i-1]*(isNullOrEmpty(vm.rentabilidadePrev) ? 0 : (vm.rentabilidadePrev/100)+1);
-                    acumuladoPrev[i]=acumuladoPrev[i-1]*(isNullOrEmpty(vm.rentabilidadeMm) ? 0 : (vm.rentabilidadeMm/100)+1);
+                    acumuladoPrev[i]=acumuladoPrev[i-1]*(isNullOrEmpty(vm.rentabilidadePrev) ? 0 : (vm.rentabilidadePrev/100)+1);
+                    acumuladoMM[i]=acumuladoMM[i-1]*(isNullOrEmpty(vm.rentabilidadeMm) ? 0 : (vm.rentabilidadeMm/100)+1);
                     acumuladoPoup[i]=acumuladoPoup[i-1]*(poupancaMensal+1);
 
                     acumuladoTotal[i]=acumuladoRF[i]+acumuladoRV[i]+acumuladoPrev[i]+acumuladoMM[i];
